@@ -1,0 +1,24 @@
+# LongMemEval Requirements
+# Core dependencies for running baseline experiments
+
+# OpenAI API
+openai==1.35.1
+
+# Progress and utilities
+tqdm==4.66.4
+backoff==2.2.1
+packaging
+
+# Data processing
+numpy==1.26.3
+nltk==3.9.1
+
+# LLM utilities
+transformers
+torch
+tiktoken
+
+# Optional: For retrieval experiments
+sentence-transformers
+rank-bm25
+scikit-learn
