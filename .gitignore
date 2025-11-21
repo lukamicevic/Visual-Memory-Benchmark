@@ -1,0 +1,4 @@
+temporal_encoding/__pycache__/
+temporal_encoding/checkpoints/
+temporal_results/
+temporal_retrieval_results/

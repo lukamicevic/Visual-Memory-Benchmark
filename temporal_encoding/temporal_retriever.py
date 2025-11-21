@@ -242,7 +242,7 @@ class TemporalEncoder(nn.Module):
         super().__init__()
 
         # Content encoder (GTE, E5, etc.)
-        self.content_encoder = SentenceTransformer(base_model)
+        self.content_encoder = SentenceTransformer(base_model, trust_remote_code=True)
         self.content_dim = self.content_encoder.get_sentence_embedding_dimension()
 
         if freeze_base:
@@ -300,7 +300,7 @@ class TemporalEncoder(nn.Module):
         )
 
         # Encode time
-        time_emb = self.time_encoder(timestamps.to(content_emb.device))
+        time_emb = self.time_encoder(timestamps.to(content_emb.device).float())
 
         # Fuse
         embeddings = self.fusion(content_emb, time_emb)

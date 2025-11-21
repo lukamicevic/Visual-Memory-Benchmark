@@ -46,7 +46,7 @@ def run_temporal_retrieval(
     device = next(encoder.parameters()).device
 
     # Encode query
-    query_emb = encoder.encode(query, query_timestamp).unsqueeze(0)  # [1, dim]
+    query_emb = encoder.encode(query, query_timestamp)  # [1, dim] already batched
 
     # Encode corpus in batches
     batch_size = 64
